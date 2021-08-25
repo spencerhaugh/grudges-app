@@ -1,10 +1,16 @@
-import logo from './logo.svg';
+import GrudgeApp from './components/GrudgeApp';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <GrudgeApp />
+      {/* Lists grudges
+          Add new grudges
+          Delete grudges
+          Edit grudges
+          Forgive grudges
+       */}
     </div>
   );
 }
