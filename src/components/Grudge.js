@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DispatchContext } from '../contexts/grudgeContext';
 import '../styles/Grudge.css';
 
 export default function Grudge({ grudge, forgive }) {
+    const dispatch = useContext(DispatchContext);
+    
     const handleForgive = () => {
-        forgive(grudge);
+        dispatch({ type: 'FORGIVE', payload: grudge.id});
     };
     return (
         <div className='Grudge'>
@@ -13,9 +16,12 @@ export default function Grudge({ grudge, forgive }) {
             <div className='crimes'>
                 <p>{ grudge.grivence }</p>
             </div>
-            <div className='forgiven-status'>
-                <label htmlFor='forgiven'>Forgiven? </label>
-                <input type='checkbox' name='forgiven' id='forgiven' checked={grudge.forgiven} onChange={handleForgive} />
+            <div className='grudge-footer'>
+                <div className='forgiven-status'>
+                    <label htmlFor='forgiven'>Forgiven? </label>
+                    <input type='checkbox' name='forgiven' id='forgiven' checked={grudge.forgiven} onChange={handleForgive} />
+                </div>
+                <button className='deleteBtn'>DELETE</button>
             </div>
         </div>
     )

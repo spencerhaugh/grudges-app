@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Grudge from './Grudge';
 import '../styles/GrudgeList.css';
+import { GrudgeContext } from '../contexts/grudgeContext';
 
-export default function GrudgeList({ grudges, forgive }) {
-    
+export default function GrudgeList() {
+    const grudges = useContext(GrudgeContext);
+
     return (
         <div className='GrudgeList'>
             <div>
@@ -13,7 +15,7 @@ export default function GrudgeList({ grudges, forgive }) {
             </div>
             {
                 grudges.map(g => (
-                    <Grudge grudge={g} forgive={forgive} key={g.id} />
+                    <Grudge grudge={g} key={g.id} />
                 ))
             }
         </div>

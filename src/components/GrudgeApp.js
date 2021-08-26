@@ -1,32 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import GrudgeForm from './GrudgeForm';
 import GrudgeList from './GrudgeList';
-import seedData from '../seed';
 import '../styles/GrudgeApp.css';
+import { GrudgeProvider } from '../contexts/grudgeContext';
 
 export default function GrudgeApp() {
-    const initialState = seedData;
-    const [grudges, setGrudges] = useState(initialState);
-
-    const handleSubmit = (newGrudge) => {
-        setGrudges([newGrudge, ...grudges]);
-    };
-
-    const forgive = (grudge) => {
-        const updatedGrudges = grudges.map(g => 
-            g.id === grudge.id ? {...g, forgiven: !g.forgiven} : g
-        );
-        setGrudges(updatedGrudges);
-    };
 
     return (
         <div className='GrudgeApp'>
             <h1>Grudge List</h1>
-            <GrudgeForm handleSubmit={handleSubmit} />
-            <GrudgeList grudges={grudges} forgive={forgive} />
-            {/* AppBar */}
-            {/* GrudgeForm - add grudges */}
-            {/* GrudgeList - list current grudges */}
+            <GrudgeProvider>
+                <GrudgeForm />
+                <GrudgeList />
+            </GrudgeProvider>
         </div>
     )
 }

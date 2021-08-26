@@ -26,7 +26,7 @@ const seedData = [
     {
         id: 5,
         name: 'Rebecca',
-        grivence: 'Stole from me',
+        grivence: 'Stole something from me',
         forgiven: false
     }
 ];

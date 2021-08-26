@@ -1,37 +1,36 @@
-import React, { useState } from 'react';
-import { v4 as uuid } from 'uuid';
+import React, { useContext, useState } from 'react';
 import '../styles/GrudgeForm.css';
+import { DispatchContext } from '../contexts/grudgeContext';
+import useInputState from '../hooks/useInputState';
 
 export default function GrudgeForm(props) {
-    const [grudgeName, setGrudgeName] = useState('');
-    const [grudgeValue, setGrudgeValue] = useState('');
-    const id = uuid();
 
-    const handleGrudge = (e) => {
-        setGrudgeValue(e.target.value);
-    };
-    const handlePerson = (e) => {
-        setGrudgeName(e.target.value);
-    };
-    const { handleSubmit } = props;
+    const [grudgeName, handleNameChange, resetName] = useInputState('');
+    const [grudgeValue, handleValueChange, resetValue] = useInputState('');
+    const dispatch = useContext(DispatchContext);
+
+    const clearForm = () => {
+        resetName('');
+        resetValue('');
+    }
 
     const handleNewGrudge = (e) => {
         e.preventDefault();
         const newGrudge = {
-            id: id,
             name: grudgeName,
-            grivence: grudgeValue,
-            forgiven: false
-        }
+            grivence: grudgeValue
+        };
+        dispatch( {type: 'ADD_NAME', payload: newGrudge} );
+        clearForm();
     };
 
     return (
         <section className='newGrudgeForm'>
             <form onSubmit={handleNewGrudge} className='GrudgeForm'>
                 <label htmlFor='name'>Name: </label>
-                <input id='name' name='name' onChange={handlePerson} placeholder='The guilty party...' />
+                <input id='name' name='name' value={grudgeName} onChange={handleNameChange} placeholder='The guilty party...' />
                 <label htmlFor='grudgeDetail'>Grudge Details: </label>
-                <textarea onChange={handleGrudge} placeholder='Their crimes...' />
+                <textarea value={grudgeValue} onChange={handleValueChange} placeholder='Their crimes...' />
                 <button type='submit'>Log New Grudge</button>
             </form>
         </section>
