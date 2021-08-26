@@ -7,7 +7,7 @@ export default function GrudgeList({ grudges, forgive }) {
     return (
         <div className='GrudgeList'>
             <div>
-                <h3>
+                <h3 className='current-grudges'>
                     Current Grudges: {grudges.length}
                 </h3>
             </div>
