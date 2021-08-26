@@ -1,0 +1,43 @@
+.newGrudgeForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.GrudgeForm {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.4);
+    padding: 20px 40px;
+}
+.GrudgeForm input {
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.GrudgeForm label {
+    margin-bottom: 10px;
+    font-size: .9rem;
+    font-weight: bold;
+}
+.GrudgeForm button {
+    padding: 10px 20px;
+    color: white;
+    background-color: tomato;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    align-self: center;
+}
+.GrudgeForm button:focus {
+    outline: 4px solid transparent;
+}
+.GrudgeForm button:hover {
+    cursor: pointer;
+}
+.GrudgeForm button:active {
+    transform: scale(.98);
+}

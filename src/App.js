@@ -1,5 +1,4 @@
 import GrudgeApp from './components/GrudgeApp';
-import './App.css';
 
 function App() {
   return (

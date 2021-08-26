@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import GrudgeForm from './GrudgeForm';
 import GrudgeList from './GrudgeList';
 import seedData from '../seed';
+import '../styles/GrudgeApp.css';
 
 export default function GrudgeApp() {
     const initialState = seedData;
@@ -17,10 +18,10 @@ export default function GrudgeApp() {
         );
         setGrudges(updatedGrudges);
     };
-    
+
     return (
-        <div>
-            <h1>Grudge App!</h1>
+        <div className='GrudgeApp'>
+            <h1>Grudge List</h1>
             <GrudgeForm handleSubmit={handleSubmit} />
             <GrudgeList grudges={grudges} forgive={forgive} />
             {/* AppBar */}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
+import '../styles/GrudgeForm.css';
 
 export default function GrudgeForm(props) {
     const [grudgeName, setGrudgeName] = useState('');
@@ -25,13 +26,13 @@ export default function GrudgeForm(props) {
     };
 
     return (
-        <section>
-            <form onSubmit={handleNewGrudge}>
+        <section className='newGrudgeForm'>
+            <form onSubmit={handleNewGrudge} className='GrudgeForm'>
                 <label htmlFor='name'>Name: </label>
                 <input id='name' name='name' onChange={handlePerson} placeholder='The guilty party...' />
                 <label htmlFor='grudgeDetail'>Grudge Details: </label>
                 <textarea onChange={handleGrudge} placeholder='Their crimes...' />
-                <button type='submit'>Log Grudge</button>
+                <button type='submit'>Log New Grudge</button>
             </form>
         </section>
     )
