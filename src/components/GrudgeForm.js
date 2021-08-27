@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import '../styles/GrudgeForm.css';
 import { DispatchContext } from '../contexts/grudgeContext';
 import useInputState from '../hooks/useInputState';
@@ -20,7 +20,9 @@ export default function GrudgeForm(props) {
             name: grudgeName,
             grivence: grudgeValue
         };
-        dispatch( {type: 'ADD_NAME', payload: newGrudge} );
+        if (!!grudgeValue && !!grudgeName) {
+            dispatch( {type: 'ADD_NAME', payload: newGrudge} )
+        };
         clearForm();
     };
 
