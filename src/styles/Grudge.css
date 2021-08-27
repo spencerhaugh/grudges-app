@@ -4,16 +4,20 @@
     flex-direction: column;
     align-items: flex-start;
     width: 60vw;
-    border: 1px solid red;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(255, 99, 71, .4);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .4);
     margin: 10px 0;
     padding: 1% 5% 2% 5%;
+    font-family: 'Bebas Neue';
 }
 
-.Grudge .forgiven-status {
-    padding: 5px;
-    margin-top: 15px;
+.Grudge h3 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.Grudge .crimes {
+    font-size: 1.2rem;
 }
 
 .Grudge .grudge-footer {
@@ -27,6 +31,9 @@
     background-color: tomato;
     border-radius: 10px;
     border: none;
+    font-family: 'Bebas Neue';
+    font-size: 1.1rem;
+    padding: 5px 15px;
 }
 .Grudge .deleteBtn:focus {
     outline: 4px solid transparent;

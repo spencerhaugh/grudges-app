@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .GrudgeApp {
+    font-family: 'Bebas Neue';
+    font-size: 1rem;
     background-color: #ccc;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
+    margin-bottom: 20px;
+}
+.GrudgeApp h1 {
+    font-size: 3rem;
+    margin: 20px auto;
 }
