@@ -28,3 +28,12 @@
     border-radius: 10px;
     border: none;
 }
+.Grudge .deleteBtn:focus {
+    outline: 4px solid transparent;
+}
+.Grudge .deleteBtn:hover {
+    cursor: pointer;
+}
+.Grudge .deleteBtn:active {
+    transform: scale(.98);
+}

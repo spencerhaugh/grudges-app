@@ -12,6 +12,8 @@ const GrudgeReducer = (state, action) => {
         case 'FORGIVE':
             return state.map(g => 
                 g.id === action.payload ? { ...g, forgiven: !g.forgiven } : g);
+        case 'DELETE':
+            return state.filter(g => g.id !== action.payload);
         default:
             return state;
     }

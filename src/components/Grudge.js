@@ -8,6 +8,10 @@ export default function Grudge({ grudge, forgive }) {
     const handleForgive = () => {
         dispatch({ type: 'FORGIVE', payload: grudge.id});
     };
+    const handleDelete = () => {
+        dispatch({type: 'DELETE', payload: grudge.id});
+    };
+    
     return (
         <div className='Grudge'>
             <div className='guilty-party'>
@@ -21,7 +25,7 @@ export default function Grudge({ grudge, forgive }) {
                     <label htmlFor='forgiven'>Forgiven? </label>
                     <input type='checkbox' name='forgiven' id='forgiven' checked={grudge.forgiven} onChange={handleForgive} />
                 </div>
-                <button className='deleteBtn'>DELETE</button>
+                <button className='deleteBtn' onClick={handleDelete}>DELETE</button>
             </div>
         </div>
     )
